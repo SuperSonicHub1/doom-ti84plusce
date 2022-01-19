@@ -2,8 +2,10 @@
 
 #include "doomgeneric.h"
 
+#include <string.h>
 #include <time.h>
 
+#include <graphx.h>
 #include <tice.h>
 
 #define KEYQUEUE_SIZE 16
@@ -29,7 +31,17 @@ static void addKeyToQueue(int pressed, unsigned int keyCode)
 
 void DG_Init()
 {
+	// Intialize the key queue.
 	memset(s_KeyQueue, 0, KEYQUEUE_SIZE * sizeof(unsigned short));
+
+	// Initialize the graphics library setup.
+	gfx_Begin();
+
+	// Draw to the buffer to avoid rendering artifacts
+	gfx_SetDrawBuffer();
+
+	// Close the graphics setup on exit.
+	atexit(gfx_End);
 }
 
 
