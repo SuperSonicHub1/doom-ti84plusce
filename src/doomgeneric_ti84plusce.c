@@ -2,6 +2,8 @@
 
 #include "doomgeneric.h"
 
+#include <time.h>
+
 #include <tice.h>
 
 #define KEYQUEUE_SIZE 16
@@ -42,12 +44,7 @@ void DG_SleepMs(uint32_t ms)
 
 uint32_t DG_GetTicksMs()
 {
-    struct timeval  tp;
-    struct timezone tzp;
-
-    gettimeofday(&tp, &tzp);
-
-    return (tp.tv_sec * 1000) + (tp.tv_usec / 1000); /* return milliseconds */
+	return (uint32_t)((double) clock() / CLOCKS_PER_SEC * 1000);
 }
 
 int DG_GetKey(int* pressed, unsigned char* doomKey)
