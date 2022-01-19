@@ -2,6 +2,8 @@
 
 #include "doomgeneric.h"
 
+#include <tice.h>
+
 #define KEYQUEUE_SIZE 16
 
 static unsigned short s_KeyQueue[KEYQUEUE_SIZE];
@@ -35,7 +37,7 @@ void DG_DrawFrame()
 
 void DG_SleepMs(uint32_t ms)
 {
-    usleep (ms * 1000);
+    usleep(ms * 1000);
 }
 
 uint32_t DG_GetTicksMs()
