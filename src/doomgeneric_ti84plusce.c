@@ -73,4 +73,5 @@ int DG_GetKey(int* pressed, unsigned char* doomKey)
 
 void DG_SetWindowTitle(const char * title)
 {
+	// The calculator has no concept of windowing.
 }
