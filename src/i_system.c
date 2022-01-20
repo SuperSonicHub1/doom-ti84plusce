@@ -26,7 +26,7 @@
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-#else
+#elif !defined(_EZ80)
 #include <unistd.h>
 #endif
 

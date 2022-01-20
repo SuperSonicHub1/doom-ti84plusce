@@ -30,6 +30,10 @@
 #define strcasecmp _stricmp
 #define strncasecmp _strnicmp
 
+#elif defined(_EZ80)
+
+#include <string.h>
+
 #else
 
 #include <strings.h>

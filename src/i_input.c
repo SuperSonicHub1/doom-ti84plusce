@@ -18,7 +18,11 @@
 #include <ctype.h>
 #include <math.h>
 #include <string.h>
+
+#ifndef _EZ80
 #include <fcntl.h>
+#endif
+
 #include <stdio.h>
 
 #include "config.h"
