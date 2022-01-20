@@ -4,9 +4,17 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#ifdef _EZ80
+
+#define DOOMGENERIC_RESX 320
+#define DOOMGENERIC_RESY 240
+
+#else
+
 #define DOOMGENERIC_RESX 640
 #define DOOMGENERIC_RESY 400
 
+#endif
 
 extern uint32_t* DG_ScreenBuffer;
 
