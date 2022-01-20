@@ -47,6 +47,22 @@ void DG_Init()
 
 void DG_DrawFrame()
 {
+	// Clear the scren
+	gfx_FillScreen(255);
+
+	// Draw the pixels
+	for (int y = 0; y < DOOMGENERIC_RESY; y++) {
+		for (int x = 0; x < DOOMGENERIC_RESX; x++) {
+			unsigned int pixel = DG_ScreenBuffer[y * DOOMGENERIC_RESX + x];
+			// Set the color
+			gfx_SetColor(pixel);
+			// Set the pixel
+			gfx_SetPixel(x, y);
+		}
+	}
+
+	// Queue the buffered frame to be displayed
+	gfx_SwapDraw();
 }
 
 void DG_SleepMs(uint32_t ms)
